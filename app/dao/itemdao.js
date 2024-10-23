@@ -22,6 +22,20 @@ class itemsDao {
             res.send(rows);
         })
     }
+
+    PostMenuItem(req, res) {
+        let fields = Object.keys(req.body);
+
+        let values = Object.values(req.body);
+
+        let sql = `INSERT INTO items (${fields.join(',')}) VALUES (${Array(values.length).fill('?').join(',')})`;
+
+        pool.query(sql, values, (err, rows) => {
+            console.log(rows);
+
+            res.send("data sent");
+        })
+    }
 };
 
 module.exports = itemsDao;

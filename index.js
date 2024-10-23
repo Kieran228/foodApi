@@ -6,6 +6,10 @@ const express = require('express');
 const app = express();
 const port = 4000;
 const router = require('./app/routes/router');
+const exp = require('constants');
+
+app.use(express.json());
+app.use(express.urlencoded({extended: true}))
 
 app.listen(port, () => {
     console.log(`App is running on port ${port}`);

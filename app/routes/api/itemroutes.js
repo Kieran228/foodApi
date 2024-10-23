@@ -16,4 +16,8 @@ router.get('/itemallergens', (req, res) => {
     dao.findItemAllergens(req, res);
 });
 
+router.post('/createitem', (req, res) => {
+    dao.PostMenuItem(req, res)
+})
+
 module.exports = router;
