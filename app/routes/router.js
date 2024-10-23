@@ -7,8 +7,18 @@ const express = require('express');
 const router = express.Router();
 
 
-router.use('/food', require('./api/app/routes/itemallergenroutes'));
+router.use('/allergens', require('./api/allergenroutes'));
 
-router.use('/food', require('./api/itemingredientsroutes'));
+router.use('/ingredients', require('./api/ingredientroutes'));
+
+router.use('/items', require('./api/itemroutes'));
+
+
+
+
+
+
+
+// router.use('/food', require('./api/itemingredientsroutes'));
 
 module.exports = router;

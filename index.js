@@ -8,7 +8,7 @@ const port = 4000;
 const router = require('./app/routes/router');
 
 app.listen(port, () => {
-    console.log('App is running on port ${port}');
+    console.log(`App is running on port ${port}`);
 });
 
 app.use('/api', router)

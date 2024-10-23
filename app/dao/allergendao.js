@@ -2,16 +2,18 @@
 
 const pool = require('../config/dpconfig');
 
-class itemAllergensDao {
+class allergensDao {
     constructor() {
         this.pool = pool;
     }
 
-    innerJoin(req, res) {
-        pool.query('SELECT items.id, allergen.id FROM (items) INNER JOIN allergens ON items.id = allergens.id', (err, rows) => {
+    findAllAllergens(req, res) {
+        pool.query('SELECT * from allergens', (err, rows) => {
             console.log(rows)
 
             res.send(rows)
-        })
+        }) 
     }
-}
+};
+
+module.exports = allergensDao;
